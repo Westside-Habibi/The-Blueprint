@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blueprint</title>
+<style>
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+}
+.tabs {
+  display:flex;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+button {
+  flex:1;
+  padding:16px;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+}
+.tabcontent {
+  display:none;
+}
+.tabcontent.active {
+  display:block;
+}
+iframe {
+  width:100%;
+  height:calc(100vh - 56px);
+  border:none;
+}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+<button onclick="showTab('bp')">📋 The Blueprint</button>
+<button onclick="showTab('therapy')">🧠 Therapy Prep</button>
+</div>
+
+<div id="bp" class="tabcontent active">
+<iframe srcdoc='<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>The Blueprint</title>
+<style>
+  @import url(&apos;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap&apos;);
+
+  :root {
+    --ocean: #0a4f6e;
+    --ocean-light: #1a7fa0;
+    --sand: #f8f8f8;
+    --sand-dark: #e0e0e0;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --text: #111111;
+    --text-muted: #555555;
+    --white: #ffffff;
+    --success: #1a6b3a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { color-scheme: light only; }
+
+  body {
+    font-family: &apos;Cormorant Garamond&apos;, Georgia, serif;
+    background: #f8f8f8 !important;
+    color: #111111 !important;
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, var(--ocean) 0%, #062d3f 60%, #041e2a 100%);
+    color: var(--white);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: &apos;&apos;;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .hero-eyebrow {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    opacity: 0.9;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 8vw, 56px);
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.75;
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+
+  .hero-date {
+    display: inline-block;
+    background: rgba(201,151,58,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 2px;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 40px 0 20px;
+  }
+
+  .section-label {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ocean-light);
+    margin-bottom: 8px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ocean);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--sand-dark);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: &apos;&apos;;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--ocean-light));
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  .timeline-item::before {
+    content: &apos;&apos;;
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--sand);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+
+  .timeline-date {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ocean);
+    margin-bottom: 8px;
+  }
+
+  .timeline-body {
+    font-size: 16px;
+    color: #222222 !important;
+    font-weight: 400;
+  }
+
+  .timeline-item.milestone::before {
+    background: var(--ocean);
+    box-shadow: 0 0 0 2px var(--ocean);
+    width: 14px;
+    height: 14px;
+    left: -30px;
+    top: 4px;
+  }
+
+  /* ACTION STEPS */
+  .steps {
+    list-style: none;
+    margin-top: 8px;
+  }
+
+  .steps li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--sand-dark);
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .steps li:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    color: var(--gold);
+    min-width: 24px;
+    padding-top: 3px;
+  }
+
+  /* SCRIPT CARDS */
+  .script-card {
+    background: #ffffff !important;
+    border-left: 3px solid var(--ocean);
+    border-radius: 0 8px 8px 0;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .script-card p {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    color: #111111 !important;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .script-card.gold-border {
+    border-left-color: var(--gold);
+  }
+
+  .script-card.green-border {
+    border-left-color: var(--success);
+  }
+
+  .script-label {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: var(--ocean);
+  }
+
+  .script-card.gold-border .script-label { color: var(--gold); }
+  .script-card.green-border .script-label { color: var(--success); }
+
+  .script-card p {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .script-card p:last-child { margin-bottom: 0; }
+
+  /* RESOURCES */
+  .resource-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .resource-item {
+    background: #ffffff !important;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .resource-detail {
+    font-size: 14px;
+    font-weight: 400;
+    color: #444444 !important;
+  }
+
+  .resource-icon {
+    font-size: 20px;
+    min-width: 28px;
+    padding-top: 2px;
+  }
+
+  .resource-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ocean);
+    margin-bottom: 2px;
+  }
+
+  .resource-detail {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-muted);
+  }
+
+  /* MANTRA BOX */
+  .mantra {
+    background: linear-gradient(135deg, var(--ocean) 0%, #062d3f 100%);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 36px 28px;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .mantra p {
+    font-size: clamp(20px, 4vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+
+  .mantra-credit {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+    opacity: 0.8;
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    margin-top: 8px;
+  }
+
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--sand-dark);
+    font-size: 16px;
+    font-weight: 300;
+    align-items: flex-start;
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--ocean-light);
+    border-radius: 3px;
+    min-width: 18px;
+    margin-top: 3px;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight {
+    background: #fffbf0 !important;
+    border: 1px solid #b8860b;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .highlight p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #111111 !important;
+  }
+
+  .highlight strong { color: var(--ocean); }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ocean);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 32px 20px;
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 48px;
+  }
+
+  .footer span {
+    color: var(--gold-light);
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--sand-dark);
+    margin: 32px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Your Personal Roadmap</div>
+  <h1><em>The</em><br>Blueprint</h1>
+  <p class="hero-sub">From where you are — to where you belong</p>
+  <div class="hero-date">AUGUST 1, 2026 · MOVE-IN DAY</div>
+</div>
+
+<div class="container">
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <div class="section-label">The Big Picture</div>
+    <h2>What You&apos;re Building</h2>
+    <div class="highlight">
+      <p>You have <strong>stable income</strong>, an <strong>approved VASH voucher</strong> for a 3-bedroom, a <strong>lenient landlord</strong> who is also a realtor, a <strong>therapist in your corner</strong>, and a family that has <strong>real assistance options</strong> without depending on you. Everything is in place. This document is your step-by-step guide to executing the plan.</p>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <div class="section-label">Phase by Phase</div>
+    <h2>The Timeline</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">THIS WEEK — JUNE 12–17</div>
+        <div class="timeline-title">One Call — VA VASH Case Manager Only</div>
+        <div class="timeline-body">
+          Call your VA VASH case manager and let them know you&apos;re planning to transfer your voucher to a new 3-bedroom unit in the same county — Costa Mesa, Newport, or Huntington Beach area — around August 1st. Same county means no portability process — fast and simple. Landlord conversation waits until after Wednesday.
+        </div>
+      </div>
+
+      <div class="timeline-item milestone">
+        <div class="timeline-date">WEDNESDAY JUNE 18 — 12PM</div>
+        <div class="timeline-title">Therapist Session</div>
+        <div class="timeline-body">
+          Bring The Blueprint and the Session Guide. Walk through everything. Get grounded, prepared, and ready. Role play the conversation. Leave with tools in hand.
+        </div>
+      </div>
+
+      <div class="timeline-item milestone">
+        <div class="timeline-date">WEDNESDAY JUNE 18 — EVENING</div>
+        <div class="timeline-title">The Conversation with Nidia</div>
+        <div class="timeline-body">
+          Same day as therapy — while you&apos;re at your most grounded and prepared. Calm. Clear. Respectful. Use the script. That same evening or next morning she calls 211 and starts every assistance application simultaneously.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">THURSDAY JUNE 19</div>
+        <div class="timeline-title">Follow-Up Text to Nidia + Landlord Conversation</div>
+        <div class="timeline-body">
+          Send Nidia the follow-up text with all resource numbers. Then call your landlord with the full honest conversation — he hears it after Nidia, never before. Ask about 3-bedroom availability in the coastal area and request a grace period for Nidia while assistance processes.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">LATE JUNE — WHEN KIDS LEAVE</div>
+        <div class="timeline-title">Kids Leave for Vacation</div>
+        <div class="timeline-body">
+          Hug them tight. Send them off with love. By this point the conversation has already happened, applications are submitted, and the landlord is cooperative. Kids leave into a situation that&apos;s already being handled.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">LATE JUNE — EARLY JULY</div>
+        <div class="timeline-title">Lock In Your New Unit</div>
+        <div class="timeline-body">
+          Landlord finds your 3-bedroom in Costa Mesa, Newport, or Huntington Beach. VASH case manager does inspection. Same county means fast turnaround — 1 to 2 weeks to approve and transfer voucher.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">MID JULY — KIDS RETURN</div>
+        <div class="timeline-title">Kids Come Home to Stability</div>
+        <div class="timeline-body">
+          Nidia has applications submitted and processing. Landlord is cooperative. Your new unit is locked in. Kids come back to a mom who has a plan — not a mom in crisis. Your son knows what&apos;s happening before you physically leave.
+        </div>
+      </div>
+
+      <div class="timeline-item milestone">
+        <div class="timeline-date">AUGUST 1, 2026</div>
+        <div class="timeline-title">Move-In Day 🌊</div>
+        <div class="timeline-body">
+          You move into your coastal 3-bedroom. Your son has his room. The ocean is close. You take that breath again — for real this time. Happy belated birthday to yourself.
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">SEPTEMBER</div>
+        <div class="timeline-title">Stability Achieved</div>
+        <div class="timeline-body">
+          Nidia&apos;s rental assistance kicks in. She is covered. Your son splits time between two homes — both stable, both loving. You are free and building.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CALL 1: VA VASH -->
+  <div class="section">
+    <div class="section-label">Call 1 — This Week</div>
+    <h2>Your VA VASH Case Manager</h2>
+    <p style="font-size:16px; font-weight:300; margin-bottom:16px;">Keep it short. You&apos;re just starting the process. They handle this regularly.</p>
+
+    <div class="script-card gold-border">
+      <div class="script-label">📞 What To Say</div>
+      <p>"Hi, this is [your name]. I&apos;m currently on the VASH program and I&apos;ve been approved for a 3-bedroom voucher. I&apos;m going through a separation and I need to transfer my voucher to a new unit. I&apos;m looking in the Costa Mesa, Newport Beach, or Huntington Beach area. I&apos;m planning to move around August 1st. What do I need to do to start that process?"</p>
+    </div>
+
+    <ul class="steps">
+      <li><span class="step-num">01</span> Ask about the voucher portability process to a new unit</li>
+      <li><span class="step-num">02</span> Ask what the inspection timeline looks like</li>
+      <li><span class="step-num">03</span> Ask if there&apos;s anything you need to submit before finding a unit</li>
+      <li><span class="step-num">04</span> Get their direct number for follow-ups</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CALL 2: LANDLORD -->
+  <div class="section">
+    <div class="section-label">Call 2 — This Week</div>
+    <h2>Your Landlord</h2>
+    <p style="font-size:16px; font-weight:300; margin-bottom:16px;">Tell him everything at once — one honest conversation. He&apos;s going to connect the dots anyway and he needs the full picture to work with you. Honesty here builds the trust you need for this plan to work.</p>
+
+    <div class="script-card gold-border">
+      <div class="script-label">📞 One Honest Conversation — Tell Him Everything</div>
+      <p>"Hey, I wanted to talk to you about something important. My wife and I are separating. I&apos;m planning to move out around August 1st and I want to find a 3-bedroom through my VASH benefit in the Costa Mesa, Newport, or Huntington area. I&apos;d love to stay in your portfolio if you have something available."</p>
+      <p>"My wife will be staying in the current unit with our son. She&apos;s going to be applying for rental assistance immediately — 211, City of Orange assistance, South County Outreach. The approval process takes about 4–8 weeks. I&apos;m asking if you&apos;d be willing to give her a grace period while that assistance processes. She&apos;s not disappearing — she&apos;s actively applying from day one."</p>
+      <p>"You&apos;d essentially be keeping both of us as tenants. I&apos;m a guaranteed VASH payment and she&apos;ll have assistance coming. I wanted to be completely straight with you so there are no surprises."</p>
+    </div>
+
+    <div class="highlight">
+      <p><strong>Key point:</strong> A lenient landlord who keeps you as a reliable VASH tenant AND keeps Nidia while assistance processes is keeping <strong>two long-term tenants</strong> instead of losing one. That is directly in his financial interest — and he&apos;ll see that immediately.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CALL 3: THERAPIST -->
+  <div class="section">
+    <div class="section-label">Two Sessions — Perfect Timing</div>
+    <h2>Your Therapist</h2>
+    <p style="font-size:16px; font-weight:300; margin-bottom:16px;">You couldn&apos;t have planned this better. You have support <em>before</em> the conversation and <em>after</em> it. Use both intentionally.</p>
+
+    <div class="script-card green-border">
+      <div class="script-label">💬 Wednesday June 18th — Prepare for the Conversation</div>
+      <p>"I&apos;ve made a decision. I&apos;m moving out on August 1st. I&apos;ve mapped out the finances, the resources for my wife, the full timeline — everything. I have a date set to have the conversation with her on June 16th. I need help preparing emotionally so I can stay calm and firm without it turning into a fight. Can we work through that together?"</p>
+    </div>
+
+    <ul class="steps">
+      <li><span class="step-num">01</span> Walk them through the full plan — finances, timeline, landlord, resources</li>
+      <li><span class="step-num">02</span> Ask them to help you anticipate her reactions and how to stay grounded</li>
+      <li><span class="step-num">03</span> Work through the guilt — separate responsibility from guilt</li>
+      <li><span class="step-num">04</span> Ask for tools to stay calm if emotions escalate in the room</li>
+    </ul>
+
+    <div class="script-card green-border" style="margin-top:20px">
+      <div class="script-label">💬 Next Session After the Conversation</div>
+      <p>"I had the conversation with Nidia on June 16th. Here&apos;s how it went — [share what happened]. I need help processing this and staying grounded through the next 6 weeks of transition without second-guessing myself."</p>
+    </div>
+
+    <ul class="steps">
+      <li><span class="step-num">01</span> Process how the conversation went — emotions, her reaction, how you felt</li>
+      <li><span class="step-num">02</span> Address any guilt that came up after the conversation</li>
+      <li><span class="step-num">03</span> Build a plan for staying emotionally steady through July</li>
+      <li><span class="step-num">04</span> Talk about what August 1st and the new chapter means to you</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <!-- THE CONVERSATION: NIDIA -->
+  <div class="section">
+    <div class="section-label">June 16 — The Most Important Conversation</div>
+    <h2>What To Say To Nidia</h2>
+    <p style="font-size:16px; font-weight:300; margin-bottom:16px;">In person. Calm. Not a fight — a statement. You are not asking for permission. You are informing her of a decision you&apos;ve made, respectfully and with care for her wellbeing.</p>
+
+    <div class="script-card">
+      <div class="script-label">🗣️ Opening</div>
+      <p>"I need to have an honest conversation with you. I&apos;m saying this with respect for everything we&apos;ve been through and the family we built together."</p>
+    </div>
+
+    <div class="script-card">
+      <div class="script-label">🗣️ The Decision</div>
+      <p>"I&apos;ve made the decision to move out. I know this isn&apos;t easy to hear. But I think deep down we both know this marriage hasn&apos;t been working for either of us for a long time. I&apos;m not doing this out of anger. I&apos;m doing this because staying in something that isn&apos;t working isn&apos;t fair to either of us."</p>
+    </div>
+
+    <div class="script-card">
+      <div class="script-label">🗣️ About the Kids</div>
+      <p>"Our kids are everything to me. Especially our son. I will always be present for him — I&apos;m finding a place with his own room so he has a real home with me too. This changes our address, not my commitment to our children."</p>
+    </div>
+
+    <div class="script-card gold-border">
+      <div class="script-label">🗣️ About the Finances — The Most Important Part</div>
+      <p>"I know your first worry is going to be rent. I&apos;ve already researched this for you. There are real programs available right now in Orange County that can help. I need you to call 211 today — they&apos;ll connect you to everything. There&apos;s also the City of Orange rental assistance program, South County Outreach which accepts applications every month, and OCHA emergency assistance up to $10,000. You qualify as a single mother with a minor child. That profile gets prioritized."</p>
+    </div>
+
+    <div class="script-card">
+      <div class="script-label">🗣️ What You Need From Her</div>
+      <p>"What I need from you is to start looking for work. Even part time. Not for me — for yourself and for our kids. The assistance programs are a bridge. You are capable of more than this situation has asked of you."</p>
+    </div>
+
+    <div class="script-card">
+      <div class="script-label">🗣️ The Closing</div>
+      <p>"I&apos;m giving us both until August 1st — that&apos;s 6 weeks. I&apos;m not disappearing overnight. I want this transition to be responsible for everyone. I&apos;ll follow up with all the resource information in writing so you have it."</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FOLLOW UP TEXT -->
+  <div class="section">
+    <div class="section-label">After the Conversation</div>
+    <h2>Follow-Up Text to Nidia</h2>
+    <p style="font-size:16px; font-weight:300; margin-bottom:16px;">Send this the same day or the morning after. She needs the resources in writing.</p>
+
+    <div class="script-card gold-border">
+      <div class="script-label">📱 Text Message</div>
+      <p>"As I mentioned, I want to make sure you have everything you need. Here are the resources for rental assistance in Orange County:</p>
+      <p>📞 Call 211 first — they&apos;ll connect you to everything available right now</p>
+      <p>🏠 City of Orange Rental Assistance — just overhauled, newly accessible. Call the City of Orange Housing Division.</p>
+      <p>🏠 South County Outreach — applies monthly between the 25th–10th. sco-oc.org</p>
+      <p>🏠 OCHA Emergency Rental Assistance — up to $10,000 per household. ochousing.org | 714-480-2777</p>
+      <p>When you apply tell them: single mother, minor child in home, sudden loss of housing subsidy, no current income. That profile gets prioritized.</p>
+      <p>I&apos;ll always be here for the kids. This is just us choosing honesty."</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- RESOURCES FOR NIDIA -->
+  <div class="section">
+    <div class="section-label">Her Safety Net</div>
+    <h2>Nidia&apos;s Resource Map</h2>
+
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-icon">📞</div>
+        <div>
+          <div class="resource-name">211 Orange County</div>
+          <div class="resource-detail">Call or text 211 — free, 24/7. Connects to every available program in real time. First call she makes.</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-icon">🏠</div>
+        <div>
+          <div class="resource-name">City of Orange Rental Assistance</div>
+          <div class="resource-detail">Just overhauled May 2026 with easier eligibility. Call City of Orange Housing Division directly.</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-icon">🏠</div>
+        <div>
+          <div class="resource-name">South County Outreach</div>
+          <div class="resource-detail">Applications accepted 25th–10th every month. Rental and utility assistance. sco-oc.org</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-icon">💰</div>
+        <div>
+          <div class="resource-name">OCHA Emergency Rental Assistance</div>
+          <div class="resource-detail">Up to $10,000 per eligible household. ochousing.org | 714-480-2777</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-icon">📋</div>
+        <div>
+          <div class="resource-name">OCHA Section 8 Waitlist Alerts</div>
+          <div class="resource-detail">Sign up at affordablehousingonline.com for instant notification when OC waitlist reopens. Apply the same day it opens.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- YOUR NUMBERS -->
+  <div class="section">
+    <div class="section-label">Your Financial Reality</div>
+    <h2>The Numbers That Prove You Can Do This</h2>
+
+    <ul class="checklist">
+      <li><span class="check-box"></span>VA Compensation Income: <strong style="margin-left:8px">$5,390/month</strong></li>
+      <li><span class="check-box"></span>Your rent with VASH (3-bed): <strong style="margin-left:8px">~$525–600/month</strong></li>
+      <li><span class="check-box"></span>All fixed expenses: <strong style="margin-left:8px">~$1,412/month</strong></li>
+      <li><span class="check-box"></span>Money remaining after all expenses: <strong style="margin-left:8px">~$3,378/month</strong></li>
+      <li><span class="check-box"></span>Contribution to kids needs directly: <strong style="margin-left:8px">As needed</strong></li>
+      <li><span class="check-box"></span>Monthly savings potential: <strong style="margin-left:8px">$1,500–2,000+</strong></li>
+    </ul>
+
+    <div class="highlight" style="margin-top:20px">
+      <p><strong>Bottom line:</strong> You are not financially trapped. You have been emotionally trapped — which made the finances feel impossible. The numbers work. They have been working. Now it&apos;s time to use them for yourself.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MASTER CHECKLIST -->
+  <div class="section">
+    <div class="section-label">Action Items</div>
+    <h2>Master Checklist</h2>
+    <p style="font-size:14px; font-weight:300; color:var(--text-muted); margin-bottom:16px; font-family:&apos;DM Mono&apos;,monospace;">Tap each item to check it off. Your progress saves automatically.</p>
+
+    <ul class="checklist" id="masterChecklist">
+      <li data-id="c1"><span class="check-box" id="c1"></span><span class="check-text">This week — Call VA VASH case manager only (same county, fast transfer)</span></li>
+      <li data-id="c2"><span class="check-box" id="c2"></span><span class="check-text">Wednesday June 18, 12pm — Therapist session: bring both documents</span></li>
+      <li data-id="c3"><span class="check-box" id="c3"></span><span class="check-text">Wednesday June 18, evening — Have the conversation with Nidia</span></li>
+      <li data-id="c4"><span class="check-box" id="c4"></span><span class="check-text">Thursday June 19 — Send Nidia follow-up text with all resources</span></li>
+      <li data-id="c5"><span class="check-box" id="c5"></span><span class="check-text">Thursday June 19 — Full honest conversation with landlord</span></li>
+      <li data-id="c6"><span class="check-box" id="c6"></span><span class="check-text">Late June — Kids leave for vacation, applications already submitted</span></li>
+      <li data-id="c7"><span class="check-box" id="c7"></span><span class="check-text">Late June/Early July — Lock in coastal 3-bedroom unit</span></li>
+      <li data-id="c8"><span class="check-box" id="c8"></span><span class="check-text">Mid July — Kids return to stability, your unit already locked in</span></li>
+      <li data-id="c9"><span class="check-box" id="c9"></span><span class="check-text">Next therapist session — Process how the conversation went</span></li>
+      <li data-id="c10"><span class="check-box" id="c10"></span><span class="check-text">August 1 — Move in. Breathe. Begin. 🌊</span></li>
+    </ul>
+
+    <div id="progressWrap" style="margin-top:20px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <span style="font-family:&apos;DM Mono&apos;,monospace; font-size:11px; color:var(--text-muted); letter-spacing:1px;">PROGRESS</span>
+        <span id="progressLabel" style="font-family:&apos;DM Mono&apos;,monospace; font-size:11px; color:var(--gold);">0 / 10</span>
+      </div>
+      <div style="background:var(--sand-dark); border-radius:4px; height:6px; overflow:hidden;">
+        <div id="progressBar" style="height:100%; width:0%; background:linear-gradient(90deg, var(--ocean), var(--gold)); border-radius:4px; transition:width 0.4s ease;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAVE INSTRUCTIONS -->
+  <div class="section">
+    <div class="section-label">Keep This Forever</div>
+    <h2>How To Save This Document</h2>
+
+    <div class="resource-grid">
+      <div class="resource-item">
+        <div class="resource-icon">📱</div>
+        <div>
+          <div class="resource-name">Save to iPhone — Safari</div>
+          <div class="resource-detail">Open this file in Safari → tap the Share button (box with arrow) → tap "Save to Files" → choose iCloud Drive. It stays there forever and works offline.</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-icon">🏠</div>
+        <div>
+          <div class="resource-name">Add to Home Screen</div>
+          <div class="resource-detail">In Safari → tap Share → tap "Add to Home Screen" → tap Add. Opens like an app anytime with one tap. Checklist stays checked between visits.</div>
+        </div>
+      </div>
+      <div class="resource-item">
+        <div class="resource-icon">☁️</div>
+        <div>
+          <div class="resource-name">iCloud Drive Backup</div>
+          <div class="resource-detail">Save to iCloud Drive so it syncs across all your devices. Find it in the Files app under iCloud Drive anytime.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Load saved state
+    const saved = JSON.parse(localStorage.getItem(&apos;blueprintChecks&apos;) || &apos;{}&apos;);
+
+    function updateProgress() {
+      const total = 10;
+      const done = document.querySelectorAll(&apos;.check-box.checked&apos;).length;
+      document.getElementById(&apos;progressLabel&apos;).textContent = done + &apos; / &apos; + total;
+      document.getElementById(&apos;progressBar&apos;).style.width = (done / total * 100) + &apos;%&apos;;
+    }
+
+    // Apply saved state
+    Object.keys(saved).forEach(id => {
+      if (saved[id]) {
+        const box = document.getElementById(id);
+        if (box) {
+          box.classList.add(&apos;checked&apos;);
+          box.closest(&apos;li&apos;).classList.add(&apos;item-done&apos;);
+        }
+      }
+    });
+
+    updateProgress();
+
+    // Click handler
+    document.getElementById(&apos;masterChecklist&apos;).addEventListener(&apos;click&apos;, function(e) {
+      const li = e.target.closest(&apos;li&apos;);
+      if (!li) return;
+      const id = li.dataset.id;
+      const box = document.getElementById(id);
+      if (!box) return;
+
+      const isChecked = box.classList.toggle(&apos;checked&apos;);
+      li.classList.toggle(&apos;item-done&apos;, isChecked);
+
+      saved[id] = isChecked;
+      localStorage.setItem(&apos;blueprintChecks&apos;, JSON.stringify(saved));
+      updateProgress();
+    });
+  </script>
+
+  <style>
+    .check-box {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+      flex-shrink: 0;
+    }
+    .check-box.checked {
+      background: var(--ocean);
+      border-color: var(--ocean);
+      position: relative;
+    }
+    .check-box.checked::after {
+      content: &apos;✓&apos;;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 1;
+    }
+    .checklist li {
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+    .checklist li.item-done .check-text {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .checklist li:hover {
+      opacity: 0.8;
+    }
+  </style>
+
+  <!-- MANTRA -->
+  <div class="mantra">
+    <p>"You are not abandoning your family.<br>You are choosing to become whole —<br>so you can actually be present for them."</p>
+    <div class="mantra-credit">SANTA MONICA SHORE · JUNE 2016 → AUGUST 2026</div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Built for you · <span>The Blueprint</span> · August 1, 2026
+</div>
+
+</body>
+</html>
+'></iframe>
+</div>
+
+<div id="therapy" class="tabcontent">
+<iframe srcdoc='<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Wednesday Session Prep</title>
+<style>
+  @import url(&apos;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap&apos;);
+
+  :root {
+    --ocean: #0a4f6e;
+    --ocean-light: #1a7fa0;
+    --sand: #f8f8f8;
+    --sand-dark: #e0e0e0;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --text: #111111;
+    --text-muted: #555555;
+    --white: #ffffff;
+    --success: #1a6b3a;
+    --purple: #5b3a7e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { color-scheme: light only; }
+
+  body {
+    font-family: &apos;Cormorant Garamond&apos;, Georgia, serif;
+    background: #f8f8f8 !important;
+    color: #111111 !important;
+    line-height: 1.7;
+  }
+
+  body {
+    font-family: &apos;Cormorant Garamond&apos;, Georgia, serif;
+    background: var(--sand);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .hero {
+    background: linear-gradient(160deg, #2d1b4e 0%, #1a0f2e 60%, #0d0820 100%);
+    color: var(--white);
+    padding: 60px 24px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: &apos;&apos;;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .hero-eyebrow {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    opacity: 0.9;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 7vw, 48px);
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.7;
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+
+  .hero-date {
+    display: inline-block;
+    background: rgba(201,151,58,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 2px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 36px 0 16px;
+  }
+
+  .section-label {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ocean-light);
+    margin-bottom: 6px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--ocean);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--sand-dark);
+  }
+
+  /* TOPIC CARDS */
+  .topic-card {
+    background: #ffffff !important;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .topic-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+
+  .topic-card.checked {
+    opacity: 0.6;
+    border-left: 3px solid var(--success);
+  }
+
+  .topic-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .topic-check {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--ocean-light);
+    border-radius: 4px;
+    min-width: 20px;
+    margin-top: 3px;
+    transition: all 0.2s ease;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .topic-card.checked .topic-check {
+    background: var(--success);
+    border-color: var(--success);
+  }
+
+  .topic-card.checked .topic-check::after {
+    content: &apos;✓&apos;;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .topic-card.checked .topic-title {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .topic-meta {
+    flex: 1;
+  }
+
+  .topic-number {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+
+  .topic-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ocean);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .topic-body {
+    font-size: 15px;
+    font-weight: 400;
+    color: #222222;
+    line-height: 1.7;
+  }
+
+  .topic-body p {
+    margin-bottom: 10px;
+  }
+
+  .topic-body p:last-child { margin-bottom: 0; }
+
+  .say-this {
+    background: #e8f4ff;
+    border-left: 3px solid var(--ocean-light);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 16px;
+    margin-top: 12px;
+    font-style: italic;
+    font-size: 15px;
+    color: #0a2d40;
+  }
+
+  .say-label {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ocean-light);
+    margin-bottom: 6px;
+    font-style: normal;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+
+  .tag-anxiety { background: #fff0e0; color: #c97020; }
+  .tag-pattern { background: #f0e8ff; color: #6b3fa0; }
+  .tag-decision { background: #e0f7ee; color: #1a7a4a; }
+  .tag-fear { background: #ffe8e8; color: #c03030; }
+  .tag-heart { background: #ffe8f5; color: #a0306b; }
+
+  /* PROGRESS */
+  .progress-wrap {
+    background: #ffffff !important;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  }
+
+  .progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .progress-label {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  .progress-count {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 11px;
+    color: var(--gold);
+  }
+
+  .progress-bar-bg {
+    background: var(--sand-dark);
+    border-radius: 4px;
+    height: 6px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--purple), var(--ocean));
+    border-radius: 4px;
+    transition: width 0.4s ease;
+  }
+
+  .reminder-box {
+    background: linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 100%);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 28px 24px;
+    text-align: center;
+    margin: 32px 0;
+  }
+
+  .reminder-box p {
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .reminder-box p:last-of-type { margin-bottom: 0; }
+
+  .reminder-credit {
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+    opacity: 0.7;
+    margin-top: 16px;
+    display: block;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--sand-dark);
+    margin: 28px 0;
+  }
+
+  .footer {
+    background: #1a0f2e;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 28px 20px;
+    font-family: &apos;DM Mono&apos;, monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 40px;
+  }
+
+  .footer span { color: var(--gold-light); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Therapy Session Prep</div>
+  <h1><em>Wednesday</em><br>Session Guide</h1>
+  <p class="hero-sub">Therapist at 12pm. Nidia conversation that evening.</p>
+  <div class="hero-date">WEDNESDAY JUNE 18, 2026 · 12PM</div>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-label">Before You Go In</div>
+    <h2>How To Use This</h2>
+    <p style="font-size:16px; font-weight:300; margin-bottom:12px;">These are the six things that matter most right now. Each one has exactly what to say so you don&apos;t have to figure it out in the moment. Tap each topic as you cover it in session.</p>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-top">
+      <span class="progress-label">TOPICS COVERED</span>
+      <span class="progress-count" id="therapyProgress">0 / 6</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="therapyBar"></div>
+    </div>
+  </div>
+
+  <!-- TOPIC 1 -->
+  <div class="topic-card" data-tid="t1" onclick="toggleTopic(this)">
+    <div class="topic-header">
+      <div class="topic-check" id="t1"></div>
+      <div class="topic-meta">
+        <div class="topic-number">TOPIC 01</div>
+        <div class="tag tag-decision">The Decision</div>
+        <div class="topic-title">I Have Made a Decision — August 1st I&apos;m Moving Out</div>
+        <div class="topic-body">
+          <p>This is not a maybe. Not something you&apos;re considering. You have a plan, a date, a location, and a landlord who can help. You need your therapist to know this is happening — not hypothetically — so they can help you execute it, not keep processing whether you should.</p>
+          <div class="say-this">
+            <div class="say-label">Say This</div>
+            "I&apos;ve made my decision. I&apos;m moving out August 1st. I have a plan — VASH benefit, a landlord who is also a realtor, a coastal 3-bedroom in the Huntington/Newport/Costa Mesa area. I don&apos;t need help deciding anymore. I need help getting through the next 6 weeks without falling back into old patterns."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 2 -->
+  <div class="topic-card" data-tid="t2" onclick="toggleTopic(this)">
+    <div class="topic-header">
+      <div class="topic-check" id="t2"></div>
+      <div class="topic-meta">
+        <div class="topic-number">TOPIC 02</div>
+        <div class="tag tag-anxiety">The Anxiety</div>
+        <div class="topic-title">I&apos;m Anxious About Nidia&apos;s Reaction — And I Already Know What It Will Be</div>
+        <div class="topic-body">
+          <p>You know she&apos;ll be passive aggressive. You know the cycle — she fights it, then when you actually leave she becomes the person you originally fell in love with to win you back. Then once she has you, complacency returns. You&apos;ve lived this multiple times.</p>
+          <p>The anxiety isn&apos;t about the unknown. It&apos;s about having to hold firm when she becomes that person again.</p>
+          <div class="say-this">
+            <div class="say-label">Say This</div>
+            "My anxiety isn&apos;t about what she&apos;ll say. I already know — she&apos;ll be passive aggressive at first. What I&apos;m scared of is when she shifts and becomes the woman I fell in love with to pull me back. That&apos;s happened every time before. I need tools to stay the course when that happens — because that&apos;s the moment I&apos;ve always broken."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 3 -->
+  <div class="topic-card" data-tid="t3" onclick="toggleTopic(this)">
+    <div class="topic-header">
+      <div class="topic-check" id="t3"></div>
+      <div class="topic-meta">
+        <div class="topic-number">TOPIC 03</div>
+        <div class="tag tag-pattern">The Pattern</div>
+        <div class="topic-title">She Changes to Win — Then Gets Complacent Once She Has Me Back</div>
+        <div class="topic-body">
+          <p>This is the cycle that has kept you trapped. She doesn&apos;t change because she&apos;s grown — she changes because it&apos;s a competition and you&apos;re the prize. Once she wins, the growth stops. You end up back where you started — invisible, unheard, carrying everything.</p>
+          <p>You need your therapist to help you name this pattern clearly so that when it shows up again you can see it for what it is — not love returning, but a familiar strategy.</p>
+          <div class="say-this">
+            <div class="say-label">Say This</div>
+            "There&apos;s a pattern I need help with. Every time I&apos;ve pulled away or left, she becomes the woman I originally fell in love with. Engaged, present, loving. And I come back. Then within months she&apos;s complacent again and I&apos;m invisible again. I need to understand why I keep responding to that — and how to stop."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 4 -->
+  <div class="topic-card" data-tid="t4" onclick="toggleTopic(this)">
+    <div class="topic-header">
+      <div class="topic-check" id="t4"></div>
+      <div class="topic-meta">
+        <div class="topic-number">TOPIC 04</div>
+        <div class="tag tag-fear">The Fear</div>
+        <div class="topic-title">I&apos;m Scared I&apos;ll End Up Alone</div>
+        <div class="topic-body">
+          <p>Even knowing what you know — even with clarity about what needs to happen — there&apos;s a quiet fear underneath all of it that you&apos;ll leave and end up with nothing. No partner. No one. Just alone.</p>
+          <p>This fear is what keeps people in situations they&apos;ve outgrown. It needs to be spoken out loud — not managed around.</p>
+          <div class="say-this">
+            <div class="say-label">Say This</div>
+            "Underneath all of this there&apos;s a fear I haven&apos;t said out loud much — that I&apos;ll leave and end up alone. That I&apos;ll lose everything familiar and have nothing. I know logically that&apos;s not true but it&apos;s there and it&apos;s been part of why I&apos;ve stayed. I want to work through where that fear comes from."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 5 -->
+  <div class="topic-card" data-tid="t5" onclick="toggleTopic(this)">
+    <div class="topic-header">
+      <div class="topic-check" id="t5"></div>
+      <div class="topic-meta">
+        <div class="topic-number">TOPIC 05</div>
+        <div class="tag tag-heart">Giselle</div>
+        <div class="topic-title">There Is Someone Else — And I Still Love Her</div>
+        <div class="topic-body">
+          <p>In 2018 you met someone named Giselle who showed you what real love actually feels like. Nidia broke that up through guilt. Giselle is currently in a relationship but a month ago you both confirmed the feelings are still mutual. You&apos;re afraid you missed your chance — and afraid you&apos;ll lose both.</p>
+          <p>This isn&apos;t the main reason you&apos;re leaving — but it&apos;s real and it&apos;s part of the picture. Your therapist should know.</p>
+          <div class="say-this">
+            <div class="say-label">Say This</div>
+            "There&apos;s someone I need to talk about. In 2018 I met a woman named Giselle who genuinely showed me what love is supposed to feel like. Nidia pulled me back through guilt and I lost that relationship. Giselle and I still have feelings for each other — we confirmed that about a month ago. She&apos;s in a relationship now and I&apos;m scared I&apos;ve missed my chance. This isn&apos;t why I&apos;m leaving — but I need to work through the guilt and the fear around it."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 6 -->
+  <div class="topic-card" data-tid="t6" onclick="toggleTopic(this)">
+    <div class="topic-header">
+      <div class="topic-check" id="t6"></div>
+      <div class="topic-meta">
+        <div class="topic-number">TOPIC 06</div>
+        <div class="tag tag-anxiety">The Conversation</div>
+        <div class="topic-title">Help Me Prepare For The Conversation With Nidia</div>
+        <div class="topic-body">
+          <p>You need practical tools for the actual conversation — not just emotional support. How to stay calm when she escalates. What to do when she cries or gets passive aggressive. How to not get pulled into defending your decision. How to end the conversation if it goes sideways.</p>
+          <div class="say-this">
+            <div class="say-label">Say This</div>
+            "I need practical help preparing for the conversation with Nidia — not just emotional support. Can we actually role play it? I want to practice staying calm when she escalates, not defending my decision over and over, and knowing when to end the conversation if it goes in circles. I know what I want to say — I just need to practice holding my ground when it gets hard."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- REMINDER BOX -->
+  <div class="reminder-box">
+    <p>"You are not going to therapy to get permission to leave.</p>
+    <p>You are going to get strong enough to follow through."</p>
+    <span class="reminder-credit">WEDNESDAY JUNE 18, 2026</span>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHAT NOT TO DO -->
+  <div class="section">
+    <div class="section-label">Just As Important</div>
+    <h2>What NOT To Do In This Session</h2>
+
+    <div class="topic-card" style="cursor:default;">
+      <div class="topic-body">
+        <p><strong style="color:var(--ocean);">Don&apos;t let the session become about whether you should leave.</strong> That decision is made. If the conversation drifts there — redirect it: "I&apos;m not here to decide. I&apos;m here to prepare."</p>
+        <p><strong style="color:var(--ocean);">Don&apos;t spend the whole session on Nidia&apos;s feelings.</strong> This session is about yours. Her reaction is hers to manage. Your job is staying grounded.</p>
+        <p><strong style="color:var(--ocean);">Don&apos;t leave without asking for one specific tool.</strong> Something concrete you can use in the moment when you feel yourself wavering — a phrase, an anchor, a physical reminder. Ask for it directly.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Built for you · <span>Wednesday Session Guide</span> · June 18, 2026
+</div>
+
+<script>
+  const saved = JSON.parse(localStorage.getItem(&apos;therapyChecks&apos;) || &apos;{}&apos;);
+
+  function updateProgress() {
+    const total = 6;
+    const done = document.querySelectorAll(&apos;.topic-card.checked&apos;).length;
+    document.getElementById(&apos;therapyProgress&apos;).textContent = done + &apos; / &apos; + total;
+    document.getElementById(&apos;therapyBar&apos;).style.width = (done / total * 100) + &apos;%&apos;;
+  }
+
+  // Apply saved state
+  Object.keys(saved).forEach(id => {
+    if (saved[id]) {
+      const card = document.querySelector(&apos;[data-tid="&apos; + id + &apos;"]&apos;);
+      const check = document.getElementById(id);
+      if (card && check) {
+        card.classList.add(&apos;checked&apos;);
+        check.classList.add(&apos;checked&apos;);
+      }
+    }
+  });
+
+  updateProgress();
+
+  function toggleTopic(card) {
+    const tid = card.dataset.tid;
+    const check = document.getElementById(tid);
+    const isChecked = card.classList.toggle(&apos;checked&apos;);
+    if (isChecked) {
+      check.classList.add(&apos;checked&apos;);
+    } else {
+      check.classList.remove(&apos;checked&apos;);
+    }
+    saved[tid] = isChecked;
+    localStorage.setItem(&apos;therapyChecks&apos;, JSON.stringify(saved));
+    updateProgress();
+  }
+</script>
+
+</body>
+</html>
+'></iframe>
+</div>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.tabcontent').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
